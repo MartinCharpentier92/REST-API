@@ -13,17 +13,9 @@
 
 <body>
 
-    <header>
-        <nav id="navbar">
-            <ul>
-                <div class="nav-links">
-                    <li><a href="allProject.php">Les projets</a></li>
-                    <li><a href="">Les équipes</a></li>
-                    <li><a href="">Les chercheurs</a></li>
-                </div>
-            </ul>
-        </nav>
-    </header>
+    <?php
+        require_once("nav.php");
+    ?>
 
     <a class="bouton photo" href="Javascript:history.go(-1)"> < Retour</a>
 

@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #343434;
     color: white;
     font-family: 'Open Sans', sans-serif;
@@ -7,11 +7,11 @@ body{
 
 /* Navbar */
 
-#navbar{
-    font-size: 1.3em; 
+#navbar {
+    font-size: 1.3em;
 }
 
-#navbar ul{
+#navbar ul {
     margin: 1% 2% 2% 2%;
     padding: 0.4rem;
     display: flex;
@@ -22,36 +22,46 @@ body{
     /* justify-content: center; */
 }
 
-#navbar li{
+#navbar li {
     border: none;
     padding: 2%;
     transition: 1s;
     display: flex;
     text-wrap: nowrap;
 }
- 
-#navbar li:hover{
+
+#navbar li:hover {
     background-color: rgb(27, 27, 27);
     border-radius: 10px;
 }
 
-.nav-links{
+.nav-links {
     display: flex;
     gap: 10px;
 }
 
 
-#navbar a{
+#navbar a {
     color: white;
     text-decoration: none;
 }
 
+.link {
+    text-decoration: none;
+    color: white;
+    transition: 1.0s;
+
+}
+
+.link:hover {
+    text-decoration: underline;
+}
 
 
 /*Boutons*/
 
 
-.bouton{
+.bouton {
     text-decoration: none;
     color: white;
     border: 1px solid white;
@@ -60,7 +70,7 @@ body{
     transition: 1.0s;
 }
 
-.bouton:hover{
+.bouton:hover {
     background-color: rgb(27, 27, 27);
     border: 1px solid black;
 }
@@ -70,28 +80,54 @@ body{
 /* Pour les projets */
 
 
-.project-h1{
+.project-h1 {
     display: flex;
     justify-content: center;
     font-size: 1.4em;
 }
 
-.project-table{
+.project-table {
     width: 50%;
     border-collapse: collapse;
     margin-bottom: 20px;
     /*border: 1px solid white;*/
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
+
 th {
     background-color: #343434;
 }
 
 tr:hover {
     background-color: #343434;
-} 
+}
+
+
+/*  index.php */
+
+.main-h1,
+.main-h2 {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% 0% 10% 0%;
+}
+
+table a{
+    text-decoration: none;
+    border: 1px solid white;
+    
+    color: white;
+}

@@ -19,7 +19,6 @@ $checkStmt->execute();
 
 if ($checkStmt->rowCount() > 0) {
     echo "Ce numéro d'équipe existe déjà";
-    header("Location: ../index.php");
 } else {
     // Insérer les données si NE n'existe pas
     $insertQuery = "INSERT INTO " . $db_table . " (NE, NOM) VALUES (:NE, :NOM)";
@@ -28,7 +27,12 @@ if ($checkStmt->rowCount() > 0) {
     $insertStmt->bindParam(":NOM", $NOM);
 
     if ($insertStmt->execute()) {
-        echo "Created";
+        header('Location: equipe.php');
+        
+        session_start();
+        $_SESSION['insert_success'] = true;
+        header('Location: equipe.php');
+        exit();
     } else {
         echo "Failed";
     }

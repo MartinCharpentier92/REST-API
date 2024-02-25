@@ -45,14 +45,11 @@
             echo "Une erreur s'est produite lors de la modification du nom de l'équipe.";
         }
     }
+    
+    $NE = $_GET['NE'];
+    
     ?>
-
-
-    <h2>Modifier le nom de l'équipe</h2>
-    <?php
-
-    $NE = $_GET['NE']; 
-    ?>
+    
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <input type="hidden" name="NE" value="<?php echo $NE; ?>">
         <label for="nouveauNom">Nouveau nom de l'équipe :</label><br>

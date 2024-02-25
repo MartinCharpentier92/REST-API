@@ -40,6 +40,7 @@
     echo "<table>";
     echo "<tr><th>Numéro de l'équipe</th><th>Nom de l'équipe</th><th>Actions</th></tr>";
     foreach ($equipe as $equipes) {
+        if ($equipes["NE"] != 0){
         echo "<tr>
             <td>" . $equipes["NE"] . "</td>
             <td>" . $equipes["NOM"] . "</td>
@@ -49,10 +50,15 @@
             
             </td>
         </tr>";
+        }
     }
     echo "</table>";
 
     ?>
+
+    <!-- <a href="equipe_show.php">Afficher les chercheurs qui n'ont pas d'équipes</a> 
+    Faire un affiche de tous les chercheurs qui ont le  numéro d'équipes 0 -> pas d'équipe de travail en gros
+    -->
 
     <h2>Ajouter une équipe </h2>
 

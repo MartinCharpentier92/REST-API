@@ -131,3 +131,37 @@ table a{
     
     color: white;
 }
+
+/*Les chercheurs*/
+
+.chercheur-h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chercheur-tri{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: 1.0s;
+}
+
+.chercheur-tri:hover{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgb(36, 36, 36);
+    background-color: rgb(36, 36, 36);
+    border-radius: 20px;
+}
+
+.chercheur-liste{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

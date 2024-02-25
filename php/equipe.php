@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Les équipes de travail</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     require_once("nav.php");
     ?>
 
-    <h1>Toutes les équipes !</h1>
+    <h1>Les équipes de travail</h1>
 
     <?php
 
@@ -46,13 +46,40 @@
             <td>
             <a href='equipe_show.php?NE=" . $equipes["NE"] . "'>Détails</a>
             <a href='equipe_update.php?NE=" . $equipes["NE"] . "'>Modifier</a>
-            <a href='equipe_del.php?NE=" . $equipes["NE"] . "' onclick=\"return confirm('Etes-vous sûr ?')\">Supprimer</a>
+            
             </td>
         </tr>";
     }
     echo "</table>";
 
     ?>
+
+    <h2>Ajouter une équipe </h2>
+
+
+    <div>
+        <form action="action.php" method=post>
+
+            <h2 class="main-h2">Création d'une nouvelle équipe de travail</h2>
+
+            <div>
+                <label for="NE">Numéro d'équipe :</label>
+                <input type="text" name="NE" id="NE" required autofocus>
+            </div>
+
+            <div>
+                <label for="NOM">Nom :</label>
+                <input type="text" name="NOM" id="NOM" required>
+            </div>
+
+            <div>
+                <input type="submit" class="submit" value="Envoyer">
+            </div>
+
+        </form>
+
+
+    </div>
 
 
     

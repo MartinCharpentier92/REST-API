@@ -10,6 +10,6 @@ $stmt->bindParam(":NE", $NE);
 $stmt->execute();
 
 
-header('Location: persos.php?msg=Personnage bien supprimé !');
+header('Location: equipe.php?msg=Personnage bien supprimé !');
 
 ?>

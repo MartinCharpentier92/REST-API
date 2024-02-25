@@ -30,7 +30,7 @@
     <h1 class="main-h1">Projet développement FullStack</h1>
 
 
-
+<!-- 
     <div>
         <form action="php/action.php" method=post>
 
@@ -55,7 +55,7 @@
 
     </div>
 
-    <a class="link" href="php/allProject.php">Voir tous les projets</a>
+    <a class="link" href="php/allProject.php">Voir tous les projets</a> -->
 
 </body>
 

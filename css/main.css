@@ -86,8 +86,10 @@ body {
     font-size: 1.4em;
 }
 
-.project-table {
-    width: 50%;
+.projet-liste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-collapse: collapse;
     margin-bottom: 20px;
     /*border: 1px solid white;*/
@@ -117,13 +119,13 @@ tr:hover {
     justify-content: center;
 }
 
-form {
+/* form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: 10% 0% 10% 0%;
-}
+} */
 
 table a{
     text-decoration: none;
@@ -164,4 +166,65 @@ table a{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.chercheur-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0% 0% 0%;
+    
+}
+
+.chercheur-form form{
+    padding: 1% 2% 1% 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+}
+
+.chercheur-form input{
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+
+/* Pour les équipes */
+
+.equipe-h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.equipe-tableau{
+    display: flex;
+    justify-content: center;
+}
+
+
+.equipe-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0% 0% 0%;
+}
+
+.equipe-form form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.equipe-form input{
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 5px;
+    margin-top: 10px;
 }

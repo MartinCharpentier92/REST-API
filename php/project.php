@@ -14,43 +14,68 @@
 <body>
 
     <?php
-        require_once("nav.php");
+    require_once("nav.php");
+    require_once("database.php");
     ?>
 
-    <a class="bouton photo" href="Javascript:history.go(-1)"> < Retour</a>
+    <a class="bouton photo" href="Javascript:history.go(-1)">
+        Retour</a>
 
     <div class="project-h1">
         <h1>Les projets</h1>
     </div>
 
-
     <?php
 
-    include_once 'database.php';
-    $db_table = "projet";
-    $database = new Database();
-    $conn = $database->getConnection();
-    $sqlQuery = " SELECT * from " . $db_table;
-    $stmt = $conn->query($sqlQuery);
+    require_once('functions.php');
+
+    
+
+    // Vérifier le type de tri souhaité (chercheur ou équipe)
+    $tri = isset($_GET['tri']) ? $_GET['tri'] : ''; // Récupérer la valeur de tri depuis l'URL
+
+    // Déterminer le sens de tri
+    $sortOrder = "ASC"; // Par défaut, tri croissant
+    if (isset($_GET['sort']) && $_GET['sort'] === 'desc') {
+        $sortOrder = "DESC"; // Si l'utilisateur a spécifié un tri descendant
+    }
+
+    // Affichage du lien pour changer l'ordre de tri en fonction du type de tri
+    $newSortOrder = $sortOrder === 'ASC' ? 'desc' : 'asc';
+    echo "<a class='chercheur-tri' href='?sort=$newSortOrder&tri=budget'>Trier par budget</a>";
+    echo "<a class='chercheur-tri' href='?sort=$newSortOrder&tri=equipe'>Trier par équipe</a>";
+
+    // Déterminer la requête SQL en fonction du type de tri
+    if ($tri === 'budget') {
+        $sqlRequest = "SELECT * FROM projet ORDER BY BUDGET $sortOrder"; // Tri par budget
+    } elseif ($tri === 'equipe') {
+        $sqlRequest = "SELECT * FROM projet ORDER BY NE $sortOrder"; // Tri par équipe
+    } else {
+        // Par défaut, tri par chercheur
+        $sqlRequest = "SELECT * FROM projet";
+    }
+    
+    $stmt = $conn->query($sqlRequest);
+    $stmt->execute();
     $projet = $stmt->fetchAll();
+
+    echo "<table class='projet-liste'>";
+    echo "<tr><th>Numéro du projet</th><th>Nom du projet</th><th>Budget</th><th>Numéro de l'équipe</th><th>Actions</th></tr>";
+    foreach ($projet as $projets) {
+        echo "<tr>
+            <td>" . $projets["NP"] . "</td>
+            <td>" . $projets["NOM"] . "</td>
+            <td>" . $projets["BUDGET"] . "</td>
+            <td>" . $projets["NE"] . "</td>
+            <td><a href='project_show.php?NP=" .$projets["NP"]. "'>Détails</a></td>
+            </tr>";
+            
+        
+    }
+    echo "</table>";
 
     ?>
 
-    <div class="project-table">
-
-        <?php
-
-        echo "<table>";
-        foreach ($projet as $projets) {
-            echo "<tr><td>Numéro de projet</td><td>" . $projets["NP"] . "</td></tr>";
-            echo "<tr><td>Nom du projet</td><td>" . $projets["NOM"] . "</td></tr>";
-            echo "<tr><td>Budget</td><td>" . $projets["BUDGET"] . "</td></tr>";
-            echo "<tr><td>Numéro de l'équipe:</td><td>" . $projets["NE"] . "</td></tr>";
-        }
-        echo "</table>";
-        ?>
-
-    </div>
 
 
 

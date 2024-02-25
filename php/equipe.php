@@ -18,8 +18,8 @@
     require_once("nav.php");
     ?>
 
-    <h1>Les équipes de travail</h1>
-
+    <h1 class="equipe-h1">Les équipes de travail</h1>
+    <a class="bouton photo" href="Javascript:history.go(-1)"> < Retour</a>
     <?php
 
     //Affichage du message de succès quand une nouvelle équipe a bien été créé
@@ -37,7 +37,7 @@
 
     $equipe = $stmt->fetchAll();
 
-    echo "<table>";
+    echo "<table class='equipe-tableau'>";
     echo "<tr><th>Numéro de l'équipe</th><th>Nom de l'équipe</th><th>Actions</th></tr>";
     foreach ($equipe as $equipes) {
         if ($equipes["NE"] != 0){
@@ -60,10 +60,7 @@
     Faire un affiche de tous les chercheurs qui ont le  numéro d'équipes 0 -> pas d'équipe de travail en gros
     -->
 
-    <h2>Ajouter une équipe </h2>
-
-
-    <div>
+    <div class="equipe-form">
         <form action="action.php" method=post>
 
             <h2 class="main-h2">Création d'une nouvelle équipe de travail</h2>
